@@ -1,7 +1,7 @@
 package yugioh;
 
 import yugioh.interfaz.VentanaDuelo;
-import yugioh.prueba.DueloDePrueba;
+import yugioh.duelo.ControladorDuelo;
 
 import javax.swing.*;
 
@@ -13,7 +13,7 @@ public class Main
         {
             VentanaDuelo ventana = new VentanaDuelo();
 
-            ventana.setAcciones(new DueloDePrueba(ventana));
+            ventana.setAcciones(new ControladorDuelo(ventana));
             ventana.setVisible(true);
             ventana.pedirCartas();
         });
