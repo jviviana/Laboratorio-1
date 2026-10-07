@@ -17,6 +17,9 @@ repositories {
 val compiladorFormularios: Configuration by configurations.creating
 
 dependencies {
+    // libreria para leer el JSON de la API
+    implementation("org.json:json:20240303")
+
     // libreria que necesitan los .form al ejecutarse (GridLayoutManager de IntelliJ)
     implementation("com.jetbrains.intellij.java:java-gui-forms-rt:233.15619.17")
     compiladorFormularios("com.jetbrains.intellij.java:java-compiler-ant-tasks:233.15619.17")
