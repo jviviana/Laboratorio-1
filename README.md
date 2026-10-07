@@ -54,16 +54,20 @@ gradlew.bat run
 ```
 src/main/java/yugioh
 ├── Main.java                  Punto de entrada: crea la ventana y conecta la lógica
-├── modelo
-│   └── Card.java              Datos de una carta: nombre, ATK, DEF e imagen
+├── api
+│   └── YgoApiClient.java      Pide cartas Monster a la API y las convierte en Card
 ├── duelo
-│   └── BattleListener.java    Eventos del duelo: onTurn, onScoreChanged, onDuelEnded
-└── interfaz
-    ├── VentanaDuelo.form      Diseño de la ventana principal
-    ├── VentanaDuelo.java      Comportamiento de la ventana (implementa BattleListener)
-    ├── PanelCarta.form        Diseño de una carta (se usa 6 veces)
-    ├── PanelCarta.java        Comportamiento de una carta
-    └── AccionesDuelo.java     Acciones del usuario que la ventana le pasa a la lógica
+│   ├── BattleListener.java    Eventos del duelo: onTurn, onScoreChanged, onDuelEnded
+│   ├── Duel.java              Reglas del duelo: turno inicial, comparación ATK/DEF y puntaje
+│   └── ControladorDuelo.java  Une la API, las reglas y la ventana (carga en segundo plano)
+├── interfaz
+│   ├── VentanaDuelo.form      Diseño de la ventana principal
+│   ├── VentanaDuelo.java      Comportamiento de la ventana (implementa BattleListener)
+│   ├── PanelCarta.form        Diseño de una carta (se usa 6 veces)
+│   ├── PanelCarta.java        Comportamiento de una carta
+│   └── AccionesDuelo.java     Acciones del usuario que la ventana le pasa a la lógica
+└── modelo
+    └── Card.java              Datos de una carta: nombre, ATK, DEF e imagen
 ```
 
 ## Diseño
